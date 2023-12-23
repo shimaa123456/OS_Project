@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-web-app
+  labels:
+    app: shimaa
+spec:
+  containers:
+    - name: my-nginx-app
+      image: shimaaessam/nginx-test
+      imagePullPolicy: IfNotPresent
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "1"
+      # ports:
+      #   - containerPort: 80

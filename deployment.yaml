@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: shimaa
+  template:
+    metadata:
+      name: my-web-app
+      labels:
+        app: shimaa
+    spec:
+      containers:
+        - name: my-nginx-app
+          image: shimaaessam/nginx-test
+          imagePullPolicy: IfNotPresent
+          # ports:
+          # - containerPort: 80
